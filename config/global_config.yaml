@@ -1,0 +1,22 @@
+name: global
+
+# config for all algorithms
+all:
+  prediction_tasks: ["dep_endterm", "dep_weekly"] # list of model prediction tasks
+  ds_keys: ["INS1_1", "INS1_2", "INS2_1", "INS2_2"] # list of datasets to analyze
+
+# config for traditional algorithms
+ml:
+  training_params:
+    # whether to save and re-use features repetitively
+    #     True only when re-running the exact same algorithm
+    save_and_reload: False 
+
+# config for deep learning based algorithms
+dl:
+  training_params:
+    best_epoch_strategy: "direct" # which strategy to pick the best training epoch
+    # whether to skip training
+    #     True only when the model training is finished
+    skip_training: False 
+
